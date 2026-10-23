@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100d12">
+<title>子夜禁宅｜中式恐怖互動遊戲</title>
+<style>
+:root{--bg:#100d12;--panel:#1a151b;--red:#a32e35;--gold:#c8ad7c;--muted:#a89ca2;--line:#493139;--text:#eee4dc}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#392027 0,#171219 45%,#09080b 100%);color:var(--text);font-family:"Noto Serif TC","Songti TC",serif;min-height:100vh}button{font:inherit;cursor:pointer;color:var(--text);border:1px solid #68434a;background:linear-gradient(135deg,#2b1d23,#171217);padding:12px 15px;border-radius:5px;transition:.2s}button:hover{border-color:var(--gold);background:#38232a}button:disabled{opacity:.4;cursor:not-allowed}.wrap{max-width:1080px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:8px 0 16px}.brand{letter-spacing:.2em;color:var(--gold);font-size:12px}.small{font-size:12px;color:var(--muted)}h1{font-size:clamp(32px,6vw,58px);letter-spacing:.22em;margin:8px 0;color:#f0d9d1;text-shadow:0 0 25px #8e263855}h2{font-size:22px;font-weight:500;margin:0 0 10px}.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(250px,.8fr);gap:16px;margin-top:18px}.scene{position:relative;min-height:400px;border:1px solid #58333c;border-radius:8px;overflow:hidden;background:linear-gradient(180deg,#14101a22,#0b080dcc),radial-gradient(ellipse at 50% 20%,#6c3942 0,#2b1b28 35%,#100e15 75%);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(20px,4vw,36px)}.scene:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08070b9c,transparent 45%,#08070b8c),repeating-linear-gradient(90deg,transparent 0 9%,#ffffff04 9.2% 9.5%);pointer-events:none}.moon{position:absolute;right:13%;top:10%;width:78px;height:78px;border-radius:50%;background:#d9c8b4;box-shadow:0 0 40px #e0c6ac4d;opacity:.65}.gate{position:absolute;left:50%;top:23%;transform:translateX(-50%);width:38%;height:48%;border:8px solid #24151a;border-bottom:0;border-radius:50% 50% 0 0;box-shadow:inset 0 0 0 3px #74504a,0 0 30px #000}.gate:before{content:"禁";position:absolute;left:50%;top:30%;transform:translateX(-50%);font-size:clamp(35px,6vw,66px);color:#b82c31;text-shadow:0 0 18px #e22}.lantern{position:absolute;top:32%;width:28px;height:42px;background:#8d2026;border:2px solid #c58d65;border-radius:7px;box-shadow:0 0 25px #e43b2845}.lantern:after{content:"";position:absolute;left:11px;top:40px;height:30px;border-left:1px solid #ba8a61}.l1{left:18%}.l2{right:18%;top:37%}.fog{position:absolute;bottom:25%;left:-20%;width:140%;height:65px;background:#d5c9d514;filter:blur(15px);border-radius:50%;animation:fog 9s ease-in-out infinite alternate}.scene-copy{position:relative;z-index:1;max-width:700px}.chapter{font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:12px}.story{font-size:16px;line-height:2;white-space:pre-line;min-height:90px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}.side{display:flex;flex-direction:column;gap:12px}.card{border:1px solid var(--line);background:linear-gradient(140deg,#211920ed,#110f14ed);border-radius:7px;padding:16px}.card h3{font-size:13px;letter-spacing:.15em;color:var(--gold);margin:0 0 12px;font-weight:500}.stat{display:flex;justify-content:space-between;gap:8px;font-size:13px;margin:10px 0;color:#d6c9c5}.bar{height:5px;background:#34252c;border-radius:5px;overflow:hidden;margin-top:6px}.bar span{display:block;height:100%;background:linear-gradient(90deg,#84232b,#d05b54);width:100%;transition:width .3s}.items{display:flex;flex-wrap:wrap;gap:6px}.item{border:1px solid #59404a;color:#cbb9b6;padding:5px 8px;font-size:12px;border-radius:3px}.item.empty{color:#73676d;border-style:dashed}.log{font-size:12px;line-height:1.9;color:#b5a6ab;max-height:150px;overflow:auto}.footer{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:16px 0;color:#80737b;font-size:11px}.overlay{position:fixed;inset:0;background:#08070bf2;z-index:10;display:flex;align-items:center;justify-content:center;padding:20px}.modal{width:min(600px,100%);border:1px solid #80505a;background:linear-gradient(145deg,#251921,#0e0b10);padding:clamp(24px,5vw,44px);text-align:center;border-radius:8px;box-shadow:0 20px 90px #000}.modal p{line-height:2;color:#c9b9bc}.modal h1{font-size:clamp(30px,7vw,52px)}.modal button{margin-top:12px;min-width:160px}.hidden{display:none!important}.danger{color:#d86c70}.ending-title{font-size:32px;color:#d7b78b;letter-spacing:.2em}.shake{animation:shake .35s}.flash{animation:flash .5s}@keyframes fog{to{transform:translateX(9%);opacity:.35}}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}@keyframes flash{0%,100%{filter:none}40%{filter:brightness(2) sepia(.3)}}@media(max-width:720px){.wrap{padding:12px}.layout{grid-template-columns:1fr}.scene{min-height:430px}.side{display:grid;grid-template-columns:1fr 1fr}.side .card:last-child{grid-column:1/-1}.choices{grid-template-columns:1fr}.top{align-items:flex-start}.story{font-size:15px}.moon{width:60px;height:60px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="overlay" id="intro">
+ <div class="modal">
+  <div class="brand">MIDNIGHT MANOR · INTERACTIVE HORROR</div>
+  <h1>子夜禁宅</h1>
+  <div style="color:#c7a0a0;letter-spacing:.35em">入夜莫回頭　聞名莫應聲</div>
+  <p>午夜，你收到一張沒有署名的紅色請帖。<br>請帖上的字跡，竟與你自己的筆跡一模一樣。<br>古宅深處有人敲門——可你明明還站在門外。</p>
+  <p class="small">中式恐怖 · 探索解謎 · 逃生生存 · 多重結局</p>
+  <button onclick="startGame()">點燈入宅</button>
+  <p class="small">建議戴上耳機遊玩。遊戲包含驚悚情節與突然的視覺驚嚇。</p>
+ </div>
+</div>
+<div class="wrap">
+ <header class="top"><div><div class="brand">午夜檔案　／　禁忌卷宗 001</div><div style="font-size:12px;margin-top:6px;color:#b5a5ab">一座不該存在的宅院</div></div><button onclick="toggleSound()" id="soundBtn">♫ 音效：關</button></header>
+ <div style="text-align:center;padding:15px 0 3px"><h1>子夜禁宅</h1><div class="small" id="subtitle">第一夜 · 紅帖引路</div></div>
+ <main class="layout">
+  <section class="scene" id="scene">
+   <div class="moon"></div><div class="gate"></div><div class="lantern l1"></div><div class="lantern l2"></div><div class="fog"></div>
+   <div class="scene-copy"><div class="chapter" id="chapter">序章　／　宅門</div><h2 id="sceneTitle">請帖</h2><div class="story" id="story">門後傳來三聲叩響。</div><div class="choices" id="choices"></div></div>
+  </section>
+  <aside class="side">
+   <section class="card"><h3>生存狀態</h3>
+    <div class="stat"><span>理智</span><strong id="sanityNum">100 / 100</strong></div><div class="bar"><span id="sanityBar"></span></div>
+    <div class="stat"><span>體力</span><strong id="staminaNum">100 / 100</strong></div><div class="bar"><span id="staminaBar"></span></div>
+    <div class="stat"><span>宅中時辰</span><strong id="clock">子時・初刻</strong></div>
+    <div class="stat"><span>危險程度</span><strong id="danger" class="danger">未明</strong></div>
+   </section>
+   <section class="card"><h3>隨身物品</h3><div class="items" id="inventory"><span class="item empty">空無一物</span></div><p class="small">找到的物品可能改變你的命運。</p></section>
+   <section class="card"><h3>異常紀錄</h3><div class="log" id="log">尚無紀錄。門內似乎有人在等你。</div></section>
+  </aside>
+ </main>
+ <div class="footer"><span>《子夜禁宅》網頁遊戲原型 · 進度自動保存在此裝置</span><span>手機可直接點選選項</span><button onclick="restart()">重新開始</button></div>
+</div>
+<div class="overlay hidden" id="jumpscare"><div class="modal" style="border-color:#b22;background:#10080b"><div style="font-size:70px;color:#c32b32;text-shadow:0 0 30px red">回　頭</div><h2 id="scareText">她站在你身後。</h2><p>你聽見自己的聲音，從黑暗裡傳來。</p><button onclick="closeScare()">不要回頭</button></div></div>
+<div class="overlay hidden" id="ending"><div class="modal"><div class="brand">禁宅卷宗 · 結案</div><div class="ending-title" id="endingTitle">黎明</div><p id="endingText"></p><p class="small" id="endingStats"></p><button onclick="restart()">再入禁宅</button></div></div>
+<script>
+const $=id=>document.getElementById(id);
+let state, sound=false, audioCtx=null, scarePending=null;
+const initial=()=>({scene:"gate",sanity:100,stamina:100,time:0,danger:0,inv:[],flags:{},log:["紅帖已經濕透，背面浮出一行小字：不要答應第三個人的邀請。"],ended:false,steps:0});
+const scenes={
+gate:{chapter:"序章　／　宅門",title:"紅帖",text:"你站在朱漆斑駁的宅門前。門環上纏著一縷濕透的紅線，門縫裡透出微弱燭光。\n\n門後傳來三聲叩響。接著，一個與你一模一樣的聲音輕聲問：「你回來了嗎？」",choices:[
+["推門進入",()=>go("hall",{danger:1})],["先檢查紅帖",()=>{addItem("紅色請帖");flag("readInvite");go("gate2")}],["沿牆尋找其他入口",()=>{state.stamina-=8;flag("sideDoor");go("side") }]]},
+gate2:{chapter:"序章　／　宅門",title:"請帖背面",text:"紅帖背面慢慢滲出墨字：「若有人喚你的乳名，切勿答應。若看見自己的影子先動，立刻閉眼。」\n\n門內那個聲音又問了一次。這回，它叫出了你從未告訴過任何人的名字。",choices:[
+["不作回答，推門",()=>go("hall",{sanity:2})],["隔著門問它是誰",()=>{hurt(15);flag("answeredDoor");go("hall",{danger:1})}],["退到牆邊，找側門",()=>{state.stamina-=8;flag("sideDoor");go("side")}]]},
+side:{chapter:"第一章　／　偏院",title:"沒有影子的紙人",text:"你繞到宅院側面。牆角立著一個穿壽衣的紙人，臉上畫著兩點朱砂。它腳下有一把生鏽的鑰匙。\n\n你剛伸出手，紙人的頭便微微偏向你。",choices:[
+["拿走鑰匙",()=>{addItem("偏門鑰匙");flag("key");go("hall")}],["燒掉紙人（需要火）",()=>{if(has("火摺子")){removeItem("火摺子");flag("burnedPaper");state.danger=Math.max(0,state.danger-1);go("hall")}else{hurt(10);note("你沒有火，紙人的嘴角卻裂開了。");go("hall")}}],["不碰它，直接離開",()=>{hurt(8);go("hall")}]]},
+hall:{chapter:"第一章　／　正廳",title:"空席滿堂",text:"正廳擺著七張椅子，卻有八道影子。供桌上的香還在燃燒，牌位全都面朝牆壁。\n\n最末一張椅子上放著一盞油燈。廊道深處傳來拖曳聲，像有人穿著濕鞋，一步一步朝你走來。",choices:[
+["拿起油燈，查看牌位",()=>{addItem("油燈");flag("sawTablets");hurt(4);go("tablets")}],["躲進供桌下",()=>{state.stamina-=12;flag("hidOnce");go("hide")}],["衝進左側廊道",()=>{state.stamina-=18;state.danger++;go("corridor")}],["查看通往地下室的門",()=>go("basementDoor")]]},
+tablets:{chapter:"第一章　／　正廳",title:"第八個牌位",text:"你把牌位翻過來。前七個牌位刻著陌生的名字，第八個牌位卻刻著你的名字，落款日期是明天。\n\n牌位底下壓著半張泛黃的家譜，最後一頁被撕走了。",choices:[
+["收起家譜碎頁",()=>{addItem("家譜碎頁");flag("genealogy");go("corridor")}],["把牌位全部轉正",()=>{hurt(18);flag("turnedTablets");go("corridor",{danger:2})}],["回到正廳，查看地下室",()=>go("basementDoor")]]},
+hide:{chapter:"第一章　／　供桌下",title:"呼吸聲",text:"你蜷縮在供桌下。鞋聲停在你面前。\n\n一雙倒著穿的布鞋緩緩轉向你。桌布外傳來低語：「找到你了。」你捂住嘴，直到那雙鞋慢慢離開。地上留下一把銅鏡。",choices:[
+["拿起銅鏡，離開",()=>{addItem("裂紋銅鏡");flag("mirror");go("corridor")}],["等更久一些",()=>{state.sanity-=8;state.stamina-=8;go("corridor")}]]},
+corridor:{chapter:"第二章　／　迴廊",title:"走不完的長廊",text:"迴廊兩側掛滿紅色燈籠，每一盞裡都映著一張你的臉。你走了很久，前方的月亮卻始終停在同一個位置。\n\n牆上有三扇門：新房、祠堂，以及一扇被鐵鏈鎖住的門。身後的燈籠一盞盞熄滅。",choices:[
+["進入新房",()=>go("bridal")],["前往祠堂",()=>go("shrine")],["檢查鐵鏈門",()=>go("basementDoor")],["奔跑穿過長廊",()=>{state.stamina-=22;state.danger++;if(state.stamina<=0){hurt(15)}go("well")}]]},
+bridal:{chapter:"第二章　／　新房",title:"喜床上的新娘",text:"大紅喜帳垂落到地面。床上坐著一個蓋著紅蓋頭的新娘，她的手指蒼白，指甲縫裡塞滿泥土。\n\n她說：「你終於來了。只要替我掀開蓋頭，我就帶你出去。」她的手裡握著一枚玉佩。",choices:[
+["掀開蓋頭",()=>{hurt(28);flag("unveiled");addItem("裂開的玉佩");go("well",{danger:2})}],["拒絕，問她的名字",()=>{state.sanity-=8;flag("askedBride");go("bridal2")}],["用銅鏡照她",()=>{if(has("裂紋銅鏡")){flag("mirrorBride");state.danger=Math.max(0,state.danger-1);addItem("裂開的玉佩");go("well")}else{hurt(12);go("well")}}]]},
+bridal2:{chapter:"第二章　／　新房",title:"她沒有名字",text:"蓋頭下傳出一聲嘆息：「名字？這宅子裡，活著的人才有名字。」她伸出手，掌心有一條與紅帖相同的紅線。\n\n「去井邊吧。你的影子正在等你。」",choices:[["離開新房，前往井邊",()=>go("well")],["拿走她手中的玉佩",()=>{hurt(18);addItem("裂開的玉佩");go("well",{danger:1})}]]},
+shrine:{chapter:"第二章　／　祠堂",title:"家族禁忌",text:"祠堂裡的蠟燭全是黑色。你找到一張禁忌清單：一、夜半不照鏡；二、聽見敲門不可開；三、井中若有月亮，切勿撈取。\n\n供桌下有火摺子，牆上卻多出第四條：「若有人活著走到天亮，替它留下。」",choices:[
+["拿走火摺子",()=>{addItem("火摺子");flag("fire");go("well")}],["跪下求祖先放行",()=>{state.sanity-=12;flag("prayed");go("well")}],["把禁忌清單撕下",()=>{addItem("禁忌清單");flag("rules");go("well")}]]},
+basementDoor:{chapter:"第三章　／　地下密室",title:"鎖住的門",text:"鐵門後傳來指甲刮木的聲音。門上刻著：「有借有還，借命還命。」鎖孔裡卡著一小截紅線。\n\n門縫下方滲出冷水。你感覺有人正隔著門，握住你的腳踝。",choices:[
+["用偏門鑰匙開鎖",()=>{if(has("偏門鑰匙")){flag("openedBasement");go("basement")}else{hurt(10);note("沒有鑰匙。門後的東西已經知道你在這裡。");go("corridor",{danger:1})}}],["用力撞門",()=>{state.stamina-=25;state.danger+=2;if(state.stamina<=0)hurt(12);go("basement",{danger:1})}],["離開，去井邊",()=>go("well")]]},
+basement:{chapter:"第三章　／　地下密室",title:"被抹去的名字",text:"密室裡掛滿泛黃照片，每張照片中的人都被挖去雙眼。最深處有一面古鏡，鏡中映出的不是你，而是一個站在宅門外的自己。\n\n桌上有一本帳冊。最後一行寫著：『替身已到，今夜可以換命。』",choices:[
+["讀完帳冊",()=>{addItem("換命帳冊");flag("ledger");state.sanity-=10;go("well")}],["砸碎古鏡",()=>{flag("brokeMirror");hurt(20);go("well",{danger:2})}],["立刻離開密室",()=>{state.stamina-=10;go("well")}]]},
+well:{chapter:"終章　／　枯井",title:"井中的月亮",text:"你來到後院。枯井裡竟映著一輪完整的月亮，井底傳來孩童唱歌的聲音。你的影子站在井沿，卻沒有跟著你移動。\n\n影子開口：「把你的名字還給我，我就讓你天亮前離開。」遠處宅門已經打開，但門外站著一個背對你的身影。",choices:[
+["把紅帖投入井中",()=>{flag("threwInvite");finish("release")}],["照禁忌清單行事，閉眼退後",()=>{if(has("禁忌清單")||state.flags.readInvite){flag("followedRules");finish("escape")}else{hurt(18);finish("lost")}}],["把銅鏡對準影子",()=>{if(has("裂紋銅鏡")){flag("usedMirror");finish("truth")}else{hurt(15);finish("lost")}}],["答應影子的交易",()=>finish("replacement")],["衝向宅門",()=>{state.stamina-=25;if(state.stamina<=0||state.danger>=3)finish("lost");else finish("escape")}]]}
+};
+function startGame(){ $("intro").classList.add("hidden"); if(!state)state=initial(); render(); }
+function addItem(x){if(!state.inv.includes(x)){state.inv.push(x);note("取得物品："+x)}}
+function removeItem(x){state.inv=state.inv.filter(i=>i!==x)}
+function has(x){return state.inv.includes(x)}
+function flag(x){state.flags[x]=true}
+function note(x){state.log.unshift(x);state.log=state.log.slice(0,8)}
+function hurt(n){state.sanity=Math.max(0,state.sanity-n);if(state.sanity<35)state.danger=Math.min(4,state.danger+1)}
+function go(id,opts={}){if(state.ended)return;state.steps++;state.time++;if(opts.danger)state.danger+=opts.danger;if(opts.sanity)state.sanity=Math.min(100,state.sanity+opts.sanity);state.sanity=Math.max(0,state.sanity);state.stamina=Math.max(0,Math.min(100,state.stamina));state.scene=id;note("你進入了："+(scenes[id]?.title||id));if(state.sanity<=0){finish("madness");return}if(state.stamina<=0&&state.danger>=3){finish("lost");return}if(state.danger>=3&&Math.random()<.35){scarePending=id}render();if(scarePending){$("scene").classList.add("shake");setTimeout(()=>{$("jumpscare").classList.remove("hidden");$("scene").classList.remove("shake");playTone(95,.4)},180)}}
+function choose(fn){if(state.ended)return;playTone(180,.06);fn();updateStatus()}
+function render(){const s=scenes[state.scene];if(!s)return;$("chapter").textContent=s.chapter;$("sceneTitle").textContent=s.title;$("story").textContent=s.text;$("subtitle").textContent=s.chapter;$("choices").innerHTML="";s.choices.forEach(([label,fn])=>{let b=document.createElement("button");b.textContent=label;b.onclick=()=>choose(fn);$("choices").appendChild(b)});updateStatus()}
+function updateStatus(){$("sanityNum").textContent=state.sanity+" / 100";$("sanityBar").style.width=state.sanity+"%";$("staminaNum").textContent=state.stamina+" / 100";$("staminaBar").style.width=state.stamina+"%";$("clock").textContent=["子時・初刻","子時・二刻","子時・三刻","丑時・初刻","丑時・二刻","丑時・三刻","寅時・將明"][Math.min(state.time,6)];$("danger").textContent=["未明","異樣","逼近","極危","失控"][Math.min(state.danger,4)];$("inventory").innerHTML=state.inv.length?state.inv.map(x=>`<span class="item">${escapeHtml(x)}</span>`).join(""):'<span class="item empty">空無一物</span>';$("log").innerHTML=state.log.map(x=>"・"+escapeHtml(x)).join("<br>")}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function closeScare(){$("jumpscare").classList.add("hidden");scarePending=null;hurt(8);state.danger=Math.max(0,state.danger-1);note("你沒有回頭，但理智仍受到侵蝕。");if(state.sanity<=0)finish("madness");else render()}
+function finish(type){state.ended=true;const endings={
+release:["紅帖歸井","你把紅帖投入井中。井底傳來一聲長嘆，所有燈籠同時熄滅。天亮時，你躺在古宅外，掌心多了一道紅線。你活下來了——但有人替你留在井底。",state.flags.genealogy?"你拼起了家譜的一角，知道這不是第一次有人替你赴死。":"你未能知道這座宅子的全部真相。"],
+escape:["天光不赦","你不再回應任何聲音，閉著眼一步步退出院子。雞鳴響起時，宅門在你身後轟然關閉。你活著離開了，但從此每晚夢裡都有人敲三下門。", "結局：生還。禁宅仍然存在。"],
+truth:["鏡中真名","銅鏡裂開，影子終於有了臉——那是你幼年時失去的記憶。你想起自己曾在這裡許下願望，讓另一個自己替你承受所有痛苦。如今，它來索回名字。",state.flags.ledger?"帳冊記載了完整的換命儀式。你燒掉帳冊，鏡中人化作一縷煙。真相與自由一同到來。":"你看見真相，卻沒有足夠的證據斬斷契約。"],
+replacement:["新任家主","你答應了影子的交易。井水漫上腳踝，冰冷的手握住你的手。再睜眼時，你已站在宅門外，身上沒有一滴水。宅門內，多了一張新的牌位。","結局：替身。你離開了禁宅，但真正的你留在了井底。"],
+lost:["紅燈長明","你朝出口狂奔，廊道卻一遍遍折回原地。燈籠裡的臉越來越近，最後一盞燈熄滅時，有人替你吹滅了呼吸。","結局：被禁宅留下。"],
+madness:["第八道影子","你的理智在低語中崩潰。你再也分不清誰在說話、誰在呼吸。天亮後，宅門前多了一個新的紙人，眉眼與你一模一樣。","結局：永夜。你的名字被刻上第八個牌位。"]};
+const e=endings[type]||endings.lost;$("endingTitle").textContent=e[0];$("endingText").textContent=e[1];$("endingStats").textContent=e[2]+"　｜　探索步數："+state.steps+"　｜　理智剩餘："+state.sanity;$("ending").classList.remove("hidden");if(type==="lost"||type==="madness"||type==="replacement")playTone(60,.8)}
+function restart(){state=initial();$("ending").classList.add("hidden");$("jumpscare").classList.add("hidden");$("intro").classList.remove("hidden");$("scene").classList.remove("flash","shake");render()}
+function toggleSound(){sound=!sound;$("soundBtn").textContent="♫ 音效："+(sound?"開":"關");if(sound){playTone(110,.12);}}
+function playTone(freq,duration){if(!sound)return;try{audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=freq;g.gain.setValueAtTime(.07,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+duration);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+duration)}catch(e){}}
+state=initial();render();
+</script>
+</body></html>
